@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Memory Game</title>
+  <title>Brad Vorjohan's Alpine JS Sandbox</title>
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 </head>
@@ -12,34 +12,20 @@
   <div x-data="{
     cards: [
     {
-      color: 'green', flipped: false, cleared: false
-    },
-    {
-      color: 'red', flipped: false, cleared: false
-    },
-    {
-      color: 'blue', flipped: false, cleared: false
-    },
-    {
-      color: 'yellow', flipped: false, cleared: false
-    },
-    {
-      color: 'green', flipped: false, cleared: false
-    },
-    {
-      color: 'red', flipped: false, cleared: false
-    },
-    {
-      color: 'blue', flipped: false, cleared: false
-    },
-    {
-      color: 'yellow', flipped: false, cleared: false
-    },
+      title: 'Card Memory Game', slug: 'card-memory-game.html'
+    }, 
     ]
-  }" class="px-10 flex items-center justify-center min-h-screen">
-    <div class="grid grid-cols-4 gap-10 flex-1">
+  }" class="px-10  min-h-screen">
+    <h1 class="p-10 font-bold text-3xl">Welcome to My<a href="https://github.com/alpinejs/alpine">Alpine.js</a> Sandbox!</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-10">
+
       <template x-for="card in cards">
-        <div :style="'background: ' + card.color" class="h-32"></div>
+        <a 
+        class="h-32 shadow shadow-lg border border-gray-300 rounded text-center" 
+        x-bind:href="card.slug"
+        >
+          <span x-text="card.title" class=""></span>
+        </a>
       </template>
     </div>
   </div>
