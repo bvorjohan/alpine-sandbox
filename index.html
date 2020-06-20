@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Memory Game</title>
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div x-data="{
+    cards: [
+    {
+      color: 'green', flipped: false, cleared: false
+    },
+    {
+      color: 'red', flipped: false, cleared: false
+    },
+    {
+      color: 'blue', flipped: false, cleared: false
+    },
+    {
+      color: 'yellow', flipped: false, cleared: false
+    },
+    {
+      color: 'green', flipped: false, cleared: false
+    },
+    {
+      color: 'red', flipped: false, cleared: false
+    },
+    {
+      color: 'blue', flipped: false, cleared: false
+    },
+    {
+      color: 'yellow', flipped: false, cleared: false
+    },
+    ]
+  }" class="px-10 flex items-center justify-center min-h-screen">
+    <div class="grid grid-cols-4 gap-10 flex-1">
+      <template x-for="card in cards">
+        <div :style="'background: ' + card.color" class="h-32"></div>
+      </template>
+    </div>
+  </div>
+</body>
+
+</html>
